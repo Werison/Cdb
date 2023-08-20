@@ -1,0 +1,36 @@
+<div class="container">
+    <h2>Cálculadora de CDB</h2>
+    <form [formGroup]="cdbForm" novalidate (submit)="send()" >
+        <div class="form-group">
+            <label for="valorMonetario">Valor Monetário</label>
+            <input type="text" formControlName="cash" id="valorMonetario" class="form-control" placeholder="Preencha o valor inicial do investimento">
+            <div class="invalid-feedback d-block" *ngIf="cdbForm.controls.cash.value < 1 && cdbForm.controls.cash.touched" >
+                O Valor monetário deve ser maior do que 0.
+            </div>
+            <div class="invalid-feedback d-block" *ngIf="!cdbForm.controls.cash.value && cdbForm.controls.cash.touched" >
+                O Valor monetário deve ser preenchido.
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="prazo">Prazo (em meses)</label>
+            <input type="number" formControlName="deadline" id="prazo" class="form-control" placeholder="Preencha o prazo em meses">
+            <div class="invalid-feedback d-block" *ngIf="cdbForm.controls.deadline.value < 2 && cdbForm.controls.deadline.touched " >
+                O prazo para resgate da aplicação deve ser maior que 1.
+            </div>
+            <div class="invalid-feedback d-block" *ngIf="!cdbForm.controls.deadline.value && cdbForm.controls.deadline.touched " >
+                O prazo para resgate da aplicação deve ser preenchido.
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary w-100 mt-2" [disabled]="!cdbForm.valid">Calcular</button>           
+        <div class="card mt-2">
+            <div class="card-body">
+              <h5 class="card-title">Resultado Bruto: {{grossResult}}</h5>
+            </div>
+        </div>
+        <div class="card mt-2">
+            <div class="card-body">
+              <h5 class="card-title">Resultado Líquido: {{liquidResult}}</h5>
+            </div>
+        </div>
+    </form>
+</div>
