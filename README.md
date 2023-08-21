@@ -6,6 +6,8 @@ O projeto tem como objetivo calcular o rendimento bruto e líquido de um Certifi
 
 - [Introdução](#introdução)
 - [Instalação](#instalação)
+- [Iniciar Projeto no Visual Studio](#iniciarProjeto)
+- [Execução de Testes](#execuçãoTestes)
 - [Como usar](#como-usar)
 - [Contribuições](#contribuições)
 - [Licença](#licença)
@@ -17,22 +19,21 @@ O Certificado de Depósito Bancário (CDB) é um dos investimentos de renda fixa
 ## Instalação
 ```bash
 git clone https://github.com/Werison/Cdb.git
-cd seu_repositorio
+cd cdb
 ```
+## Iniciar o projeto no visual studio 2022
+1. Definir o projeto Api como startup project
+2. Pressionar botão F5
+
+## Execução dos testes
+
+Clicar na opção  Tests do menu e Run All Tests (ctrl+R,A) 
 
 ## Como usar
 
 1. Insira o prazo em meses e o valor inicial da aplicação: 
 
 3. O programa retornará o rendimento bruto e líquido de seu investimento.
-
-## Contribuições
-
-Contribuições são bem-vindas! Para contribuir:
-
-1. Faça um fork do projeto.
-2. Crie uma nova branch para suas modificações.
-3. Faça um pull request.
 
 ## Licença
 
