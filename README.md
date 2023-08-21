@@ -16,7 +16,6 @@ O Certificado de Depósito Bancário (CDB) é um dos investimentos de renda fixa
 
 ## Instalação
 
-Descreva os passos para instalar o projeto. Por exemplo:
 
 ```bash
 git clone https://github.com/Werison/Cdb.git
