@@ -15,8 +15,6 @@ O projeto tem como objetivo calcular o rendimento bruto e líquido de um Certifi
 O Certificado de Depósito Bancário (CDB) é um dos investimentos de renda fixa mais populares no Brasil. Este projeto oferece uma ferramenta simples para calcular rendimentos de CDBs.
 
 ## Instalação
-
-
 ```bash
 git clone https://github.com/Werison/Cdb.git
 cd seu_repositorio
