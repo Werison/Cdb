@@ -2,6 +2,8 @@ using Application.Dtos;
 using Application.Services;
 using Domain.Validators;
 using MediatR;
+using Microsoft.AspNetCore.Localization;
+using System.Globalization;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -29,7 +31,6 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
 app.UseCors(app => app.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
-
 
 app.MapControllerRoute(
     name: "default",

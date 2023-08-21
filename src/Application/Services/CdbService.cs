@@ -10,7 +10,7 @@ namespace Application.Services
     public class CdbService: IRequestHandler<CdbServiceRequest, CdbServiceResponse>, ICdbService
     {
         private readonly CdbValidator _validator;
-
+        
         public CdbService(CdbValidator validator)
         {
             _validator = validator;

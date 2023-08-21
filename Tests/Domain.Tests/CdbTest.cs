@@ -6,7 +6,7 @@ namespace Domain.Tests
     public class CdbTest
     {
         [Fact]
-        public void Geven_a_deadline_less_or_equal_to_one_should_return_false()
+        public void Given_a_deadline_less_or_equal_to_one_should_return_false()
         {
             var cdb = new Entities.Cdb(1000, 1);
 
@@ -16,7 +16,7 @@ namespace Domain.Tests
         }
 
         [Fact]
-        public void Geven_a_deadline_more_then_one_should_return_true()
+        public void Given_a_deadline_more_then_one_should_return_true()
         {
             var cdb = new Entities.Cdb(1000, 2);
 
@@ -26,7 +26,7 @@ namespace Domain.Tests
         }
 
         [Fact]
-        public void Geven_a_cash_less_or_equal_to_zero_should_return_false()
+        public void Given_a_cash_less_or_equal_to_zero_should_return_false()
         {
             var cdb = new Entities.Cdb(0, 2);
 
@@ -36,7 +36,7 @@ namespace Domain.Tests
         }
 
         [Fact]
-        public void Geven_a_cash_more_then_zero_should_return_true()
+        public void Given_a_cash_more_then_zero_should_return_true()
         {
             var cdb = new Entities.Cdb(1, 2);
 
@@ -52,7 +52,7 @@ namespace Domain.Tests
         [InlineData(4)]
         [InlineData(5)]
         [InlineData(6)]
-        public void CalculateTax_Geven_a_deadline_less_or_equal_to_six_should_return_0_225M(int deadline)
+        public void CalculateTax_Given_a_deadline_less_or_equal_to_six_should_return_0_225M(int deadline)
         {
             var tax = Entities.Cdb.CalculateTax(deadline);
             Assert.Equal(0.225M, tax);
@@ -65,7 +65,7 @@ namespace Domain.Tests
         [InlineData(10)]
         [InlineData(11)]
         [InlineData(12)]
-        public void CalculateTax_Geven_a_deadline_less_or_equal_to_twelve_should_return_0_20M(int deadline)
+        public void CalculateTax_Given_a_deadline_less_or_equal_to_twelve_should_return_0_20M(int deadline)
         {
             var tax = Entities.Cdb.CalculateTax(deadline);
             Assert.Equal(0.20M, tax);
@@ -84,7 +84,7 @@ namespace Domain.Tests
         [InlineData(22)]
         [InlineData(23)]
         [InlineData(24)]
-        public void CalculateTax_Geven_a_deadline_less_or_equal_to_twentyfour_should_return_0_175M(int deadline)
+        public void CalculateTax_Given_a_deadline_less_or_equal_to_twentyfour_should_return_0_175M(int deadline)
         {
             var tax = Entities.Cdb.CalculateTax(deadline);
             Assert.Equal(0.175M, tax);
@@ -93,7 +93,7 @@ namespace Domain.Tests
         [Theory]
         [InlineData(25)]
         [InlineData(26)]
-        public void CalculateTax_Geven_a_deadline_more_then_twentyfour_should_return_0_15M(int deadline)
+        public void CalculateTax_Given_a_deadline_more_then_twentyfour_should_return_0_15M(int deadline)
         {
             var tax = Entities.Cdb.CalculateTax(deadline);
             Assert.Equal(0.15M, tax);
@@ -102,8 +102,8 @@ namespace Domain.Tests
         [Theory]
         [InlineData(100, 6, 105.98)]
         [InlineData(100, 5, 104.96)]
-        [InlineData(100, 5, 103.95)]
-        public void CalculateGrossIncome_Geven_a_cash_and_deadline_should_return_gross_income(decimal cash, int deadline, decimal expected)
+        [InlineData(100, 4, 103.95)]
+        public void CalculateGrossIncome_Given_a_cash_and_deadline_should_return_gross_income(decimal cash, int deadline, decimal expected)
         {
             var grossIncome = Entities.Cdb.CalculateGrossIncome(cash, deadline);
             Assert.Equal(expected, grossIncome);
@@ -113,7 +113,7 @@ namespace Domain.Tests
         [Theory]
         [InlineData(100, 6, 104.63)]
         [InlineData(100, 4, 103.06)]
-        public void CalculateLiquidIncome_Geven_a_cash_and_deadline_should_return_liquid_income(decimal cash, int deadline, decimal expected)
+        public void CalculateLiquidIncome_Given_a_cash_and_deadline_should_return_liquid_income(decimal cash, int deadline, decimal expected)
         {
             var liquidIncome = Entities.Cdb.CalculateLiquidIncome(cash, deadline);
             Assert.Equal(expected, liquidIncome);
